@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeRestore", "ShoeRestore\ShoeRestore.csproj", "{68A1DB77-844E-49B7-9F52-72DD4B664D49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68A1DB77-844E-49B7-9F52-72DD4B664D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A1DB77-844E-49B7-9F52-72DD4B664D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A1DB77-844E-49B7-9F52-72DD4B664D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A1DB77-844E-49B7-9F52-72DD4B664D49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07F3B34F-24CB-4A17-BDA9-B2B98AFDD93C}
+	EndGlobalSection
+EndGlobal
