@@ -16,13 +16,14 @@ namespace ShoesRestoreC_
             do
             {
                 Console.Clear();
-                Console.WriteLine("== ShoesRestore ==");
+                Console.WriteLine("== ShoesRestore ==\n");
                 Console.WriteLine("1 - Cadastrar Cliente");
                 Console.WriteLine("2 - Registrar Sapato com Defeito");
                 Console.WriteLine("3 - Exibir Relatório de Clientes");
                 Console.WriteLine("4 - Exibir Relatório de Sapatos e Defeitos");
+                Console.WriteLine("5 - Resolver Sapato com Defeito");
                 Console.WriteLine("0 - Sair");
-                Console.Write("Escolha uma opção: ");
+                Console.Write("\nEscolha uma opção: ");
                 opcao = int.Parse(Console.ReadLine());
 
                 switch (opcao)
@@ -38,6 +39,9 @@ namespace ShoesRestoreC_
                         break;
                     case 4:
                         ExibirRelatorioSapatos();
+                        break;
+                    case 5:
+                        ResolverSapatoComDefeito();
                         break;
                     case 0:
                         Console.WriteLine("Saindo do sistema...");
@@ -63,32 +67,38 @@ namespace ShoesRestoreC_
             string nome = Console.ReadLine();
             Console.Write("Endereço do Cliente: ");
             string endereco = Console.ReadLine();
+            Console.Write("CPF do Cliente: ");
+            string cpf = Console.ReadLine();
+            Console.Write("Email do Cliente: ");
+            string email = Console.ReadLine();
+            Console.Write("Contato do Cliente: ");
+            string contato = Console.ReadLine();
 
-            Cliente cliente = new Cliente(nome, endereco);
+            Cliente cliente = new Cliente(nome, endereco, cpf, email, contato);
             clientes.Add(cliente);
 
             Console.WriteLine("Cliente cadastrado com sucesso!");
         }
 
-        // Novo método para selecionar o cliente
+        // método para selecionar o cliente
         static Cliente EscolherCliente()
         {
             Console.WriteLine("Escolha um cliente para associar ao sapato:");
 
-            // Verificando se há clientes cadastrados
+            // verificando se há clientes cadastrados
             if (clientes.Count == 0)
             {
                 Console.WriteLine("Nenhum cliente cadastrado. Por favor, cadastre um cliente primeiro.");
-                return null;  // Retorna null caso não haja clientes cadastrados
+                return null;  // retorna null caso não haja clientes cadastrados
             }
 
-            // Exibindo os clientes cadastrados
+            // exibindo os clientes cadastrados
             for (int i = 0; i < clientes.Count; i++)
             {
                 Console.WriteLine($"{i + 1} - {clientes[i].Nome}");
             }
 
-            // Solicitar que o usuário escolha um cliente
+            // solicitar que o usuário escolha um cliente ao cadastrar um modelo de sapato
             Console.Write("Digite o número do cliente: ");
             int clienteEscolhido = int.Parse(Console.ReadLine()) - 1;
 
@@ -96,10 +106,10 @@ namespace ShoesRestoreC_
             if (clienteEscolhido < 0 || clienteEscolhido >= clientes.Count)
             {
                 Console.WriteLine("Opção inválida. Cliente não encontrado.");
-                return null;  // Retorna null caso o cliente não seja encontrado
+                return null;  // retorna null caso o cliente não seja encontrado
             }
 
-            // Retorna o cliente selecionado
+            // retorna o cliente selecionado
             return clientes[clienteEscolhido];
         }
 
@@ -158,7 +168,46 @@ namespace ShoesRestoreC_
             }
         }
 
-    static void ExibirRelatorioSapatos()
+        static void ResolverSapatoComDefeito()
+        {
+            Console.WriteLine("\n== Resolver Sapato com Defeito ==");
+
+            // exibe a lista de sapatos com defeito
+            List<Sapato> sapatosComDefeito = sapatos.FindAll(s => s.Defeitos.Count > 0);
+
+            if (sapatosComDefeito.Count == 0)
+            {
+                Console.WriteLine("Não há sapatos com defeito registrados.");
+                return;
+            }
+
+            // exibe os sapatos com defeito para o usuário escolher
+            Console.WriteLine("Escolha um sapato para resolver:");
+            for (int i = 0; i < sapatosComDefeito.Count; i++)
+            {
+                Console.WriteLine($"{i + 1} - Modelo: {sapatosComDefeito[i].Modelo}, Preço: R${sapatosComDefeito[i].Preco:F2}");
+            }
+
+            Console.Write("Digite o número do sapato que foi resolvido: ");
+            int escolha = int.Parse(Console.ReadLine()) - 1;
+
+            if (escolha < 0 || escolha >= sapatosComDefeito.Count)
+            {
+                Console.WriteLine("Opção inválida.");
+                return;
+            }
+
+            // M
+            Sapato sapatoResolvido = sapatosComDefeito[escolha];
+            Console.WriteLine($"O sapato '{sapatoResolvido.Modelo}' foi resolvido!");
+
+            // Remover o sapato resolvido da lista
+            sapatos.Remove(sapatoResolvido);
+
+            Console.WriteLine($"O sapato '{sapatoResolvido.Modelo}' foi removido da lista de sapatos com defeito.");
+        }
+
+        static void ExibirRelatorioSapatos()
 {
     Console.WriteLine("\n== Relatório de Sapatos e Defeitos ==");
     if (sapatos.Count == 0)

@@ -1,35 +1,38 @@
-﻿using System;
+﻿using ShoesRestoreC_;
 using System.Collections.Generic;
+using System;
 
-namespace ShoesRestoreC_
+public class Sapato
 {
-    public class Sapato
+    public string Modelo { get; set; }
+    public decimal Preco { get; set; }
+    public Cliente Cliente { get; set; }
+    public List<Defeito> Defeitos { get; set; }  // lista de defeitos
+
+    public Sapato(string modelo, decimal preco)
     {
-        public string Modelo { get; set; }
-        public decimal Preco { get; set; }
-        public Cliente Cliente { get; set; }
-        public Defeito Defeito { get; set; } // Defeito associado ao sapato
+        Modelo = modelo;
+        Defeitos = new List<Defeito>();  // Inicializando a lista de defeitos
+        Preco = preco;
+    }
 
-        public Sapato(string modelo, decimal preco)
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Modelo: {Modelo}, Preço: R$ {Preco}");
+
+        // verifica se o sapato tem defeitos registrados
+        if (Defeitos.Count > 0)
         {
-            Modelo = modelo;
-            Preco = preco;
-            Defeitos = new List<Defeito>();  // Inicializando a lista de defeitos
-            // Defeitos = new List<Defeito>();
+            Console.WriteLine($"Cliente: {Cliente.Nome}");
+            Console.WriteLine("Defeitos:");
+            foreach (var defeito in Defeitos)
+            {
+                Console.WriteLine($"- {defeito.Descricao}");
+            }
         }
-
-        public void ExibirInformacoes()
+        else
         {
-            Console.WriteLine($"Modelo: {Modelo}, Preço: R$ {Preco}");
-            if (Defeito != null)
-            {
-                    Console.WriteLine($"Cliente: {Cliente.Nome}");
-                    Console.WriteLine($"Defeito: {Defeito.Descricao}");
-            }
-            else
-            {
-                Console.WriteLine("Nenhum defeito registrado.");
-            }
+            Console.WriteLine("Nenhum defeito registrado.");
         }
     }
 }

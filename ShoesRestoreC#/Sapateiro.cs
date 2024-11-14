@@ -13,9 +13,11 @@ namespace ShoesRestoreC_
             Experiencia = experiencia;
         }
 
+        //defeito à lista de defeitos do sapato
         public void RegistrarDefeito(Sapato sapato, Defeito defeito)
         {
-            sapato.Defeito = defeito;
+            //adiciona o defeito à lista de defeitos, em vez de substituir
+            sapato.Defeitos.Add(defeito);
             Console.WriteLine($"{Nome} registrou o defeito '{defeito.Descricao}' no {sapato.Modelo}.");
         }
 

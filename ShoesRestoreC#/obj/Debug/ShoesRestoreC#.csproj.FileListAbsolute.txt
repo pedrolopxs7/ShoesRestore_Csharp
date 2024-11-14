@@ -12,3 +12,10 @@ C:\Users\aksum.renan\Desktop\ShoesRestoreC#\ShoesRestoreC#\obj\Debug\ShoesRestor
 C:\Users\aksum.renan\Desktop\ShoesRestoreC#\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.csproj.CoreCompileInputs.cache
 C:\Users\aksum.renan\Desktop\ShoesRestoreC#\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.exe
 C:\Users\aksum.renan\Desktop\ShoesRestoreC#\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.pdb
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.csproj.AssemblyReference.cache
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.csproj.CoreCompileInputs.cache
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.exe
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\obj\Debug\ShoesRestoreC#.pdb
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\bin\Debug\ShoesRestoreC#.exe.config
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\bin\Debug\ShoesRestoreC#.exe
+C:\Users\aksum.renan\Desktop\ShoesRestore_Csharp\ShoesRestoreC#\bin\Debug\ShoesRestoreC#.pdb
